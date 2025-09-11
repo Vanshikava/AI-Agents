@@ -1,0 +1,73 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyN6zvenPONhmkijgFrlTtLV",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Vanshikava/AI-Agents/blob/main/weatherAgentipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 12,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "4sIVpGUuCxH4",
+        "outputId": "89f7359b-a67c-46ff-af14-d7d4bd6ca125"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "sunny\n"
+          ]
+        }
+      ],
+      "source": [
+        "class weatherAgent:\n",
+        "  def __init__(self):\n",
+        "    self.history =[]\n",
+        "  def perceive(self, weather):\n",
+        "     self.history.append(weather)\n",
+        "  def predict(self):\n",
+        "   return \"rainy\" if self.history.count(\"rainy \")>self.history.count(\"sunny\") else \"sunny\"\n",
+        "agent = weatherAgent()\n",
+        "agent.perceive(\"sunny\")\n",
+        "agent.perceive(\"sunny\")\n",
+        "agent.perceive(\"rainy\")\n",
+        "print(agent.predict())\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "JJYzE81XEv11"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
