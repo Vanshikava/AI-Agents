@@ -1,0 +1,66 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyMvYe2BPPaAOG0aYPRPgH30",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Vanshikava/AI-Agents/blob/main/DoorAgent\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 7,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "IR2LX2fEw1qm",
+        "outputId": "64ce0cc1-3046-4a30-8a31-cd62e53b49b0"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "unlocked\n"
+          ]
+        }
+      ],
+      "source": [
+        "class DoorAgent:\n",
+        "  def __init__(self):\n",
+        "    self.locked = True\n",
+        "  def perceive(self, action):\n",
+        "      if action == \"unlocked\":\n",
+        "        self.locked = False\n",
+        "      elif action == \"locked\":\n",
+        "        self.locked = True\n",
+        "  def status(self):\n",
+        "          return \"locked \" if self.locked else \"unlocked\"\n",
+        "agent = DoorAgent()\n",
+        "agent.perceive(\"unlocked\")\n",
+        "print(agent.status())\n",
+        ""
+      ]
+    }
+  ]
+}
