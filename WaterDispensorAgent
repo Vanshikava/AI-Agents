@@ -1,0 +1,74 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPv6XRVYBygU/KRwuqUXziI",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Vanshikava/AI-Agents/blob/main/WaterDispensorAgent\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "SBh5e-sPrkTg",
+        "outputId": "553c6833-303e-4c46-db13-14b39d9c7f18"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "None\n",
+            "water dispensor idle\n"
+          ]
+        }
+      ],
+      "source": [
+        "class WaterDispensorAgent:\n",
+        "  def __init__(self):\n",
+        "        self.state = \"idle\"\n",
+        "  def update(self, command):\n",
+        "     if command == \"dispense\":\n",
+        "       self.state = \"dispensing\"\n",
+        "     elif command == \"stop\":\n",
+        "          self.state = \"idle\"\n",
+        "          return f\"water dispensor {self.state}\"\n",
+        "agent = WaterDispensorAgent()\n",
+        "print(agent.update(\"dispense\"))\n",
+        "print(agent.update(\"stop\"))\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "HtkLjVFfryLj"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
